@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            max-width: 90%;
+            margin: 30px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        h1 {
+            color: #d6336c;
+            text-shadow: 3px 3px 10px rgba(255, 105, 180, 0.7);
+            font-size: 2.5rem;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 3px 3px 10px rgba(255, 105, 180, 0.7); }
+            100% { text-shadow: 5px 5px 20px rgba(255, 20, 147, 1); }
+        }
+        .photo-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .photo-gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid #d6336c;
+            transition: transform 0.5s, box-shadow 0.5s;
+            animation: floating 6s infinite alternate ease-in-out;
+        }
+        .photo-gallery img:hover {
+            transform: scale(1.2) rotate(5deg);
+            box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.8);
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-15px); }
+        }
+        .flower {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: url('flower.png') no-repeat center center/contain;
+            animation: floatUp 6s linear infinite;
+            opacity: 0.8;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #d6336c;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+        .button:hover {
+            background: #ff407a;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="love_song.mp3" type="audio/mpeg">
+    </audio>
+    <div class="container">
+        <h1>Happy Valentine's Day & Happy Birthday, My Love! 💖</h1>
+        <p class="quote">"You are my heart, my soul, my everything."</p>
+        <div class="photo-gallery">
+            <img src="images/416838538_6999065640143027_5378911182045016792_n.jpg" alt="Your Beautiful Smile">
+            <img src="images/437945747_7414880688561518_4350135714436767057_n.jpg" alt="Memories Together">
+            <img src="images/444784189_7593854927330759_3901486776261902026_n.jpg" alt="Forever Us">
+        </div>
+        <p class="quote">I love you forever and always! ❤️</p>
+        <button class="button" onclick="showSurprise()">Click for a Surprise</button>
+    </div>
+    <script>
+        function createFlower() {
+            const flower = document.createElement('div');
+            flower.classList.add('flower');
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(flower);
+            setTimeout(() => {
+                flower.remove();
+            }, 5000);
+        }
+        setInterval(createFlower, 800);
+
+        function showSurprise() {
+            const messages = [
+                'You are the most beautiful person in my life! 💖',
+                'Every moment with you is a blessing! 🌹',
+                'I love you more than words can express! ❤️',
+                'Forever yours, my love! 💕'
+            ];
+            alert(messages[Math.floor(Math.random() * messages.length)]);
+        }
+    </script>
+</body>
+</html>
