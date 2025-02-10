@@ -1,142 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Love</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;700&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #ff758c, #ff7eb3);
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        .container {
-            max-width: 90%;
-            margin: 30px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-            position: relative;
-            animation: fadeIn 2s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            color: #d6336c;
-            text-shadow: 3px 3px 10px rgba(255, 105, 180, 0.7);
-            font-size: 3rem;
-            animation: glow 1.5s infinite alternate;
-        }
-        @keyframes glow {
-            0% { text-shadow: 3px 3px 10px rgba(255, 105, 180, 0.7); }
-            100% { text-shadow: 5px 5px 20px rgba(255, 20, 147, 1); }
-        }
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .photo-gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            border: 4px solid #d6336c;
-            transition: transform 0.5s, box-shadow 0.5s;
-        }
-        .photo-gallery img:hover {
-            transform: scale(1.2) rotate(5deg);
-            box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.8);
-        }
-        .floating-hearts {
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Red_heart_icon.svg/1024px-Red_heart_icon.svg.png') no-repeat center center/contain;
-            animation: floatUp 6s linear infinite;
-            opacity: 0.8;
-        }
-        @keyframes floatUp {
-            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
-        }
-        .button {
-            margin-top: 20px;
-            padding: 12px 24px;
-            background: #d6336c;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.4rem;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
-        }
-        .button:hover {
-            background: #ff407a;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Love</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;700&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 90%;
+      margin: 30px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      animation: fadeIn 2s ease-in-out;
+      transition: transform 0.5s ease;
+    }
+    .container:hover {
+      transform: scale(1.02);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      color: #d6336c;
+      text-shadow: 3px 3px 10px rgba(255, 105, 180, 0.7);
+      font-size: 3rem;
+      animation: glow 1.5s infinite alternate;
+    }
+    @keyframes glow {
+      0% { text-shadow: 3px 3px 10px rgba(255, 105, 180, 0.7); }
+      100% { text-shadow: 5px 5px 20px rgba(255, 20, 147, 1); }
+    }
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .photo-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      border: 4px solid #d6336c;
+      transition: transform 0.5s, box-shadow 0.5s;
+      cursor: pointer;
+    }
+    .photo-gallery img:hover {
+      transform: scale(1.2) rotate(5deg);
+      box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.8);
+    }
+    .floating-hearts {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Red_heart_icon.svg/1024px-Red_heart_icon.svg.png') no-repeat center center/contain;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+    .button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #d6336c;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+    }
+    .button:hover {
+      background: #ff407a;
+    }
+    .quote-carousel {
+      margin-top: 30px;
+      width: 80%;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #d6336c;
+      overflow: hidden;
+      position: relative;
+      transition: opacity 0.5s ease;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+      animation: fadeInModal 0.5s ease;
+    }
+    @keyframes fadeInModal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+      animation: fadeInModal 0.5s ease;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .close:hover, .close:focus {
+      color: #bbb;
+      text-decoration: none;
+    }
+    .love-letter {
+      margin-top: 30px;
+      width: 80%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      font-size: 1.2rem;
+      color: #d6336c;
+      line-height: 1.5;
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .typed-text {
+      border-right: 2px solid #d6336c;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      .button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+      }
+      .quote-carousel {
+        font-size: 1rem;
+        padding: 10px;
+      }
+      .love-letter {
+        font-size: 1rem;
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Audio element for background music -->
-    <audio id="bgMusic" loop>
-        <source src="mp3/Shania-Twain-You-re-Still-The-One-instrumentalfx.mp3" type="audio/mpeg">
-    </audio>
-
-    <div class="container">
-        <h1>Happy Valentine's Day & Happy Birthday, My Love! 💖</h1>
-        <p class="quote">"You are my heart, my soul, my everything."</p>
-        <div class="photo-gallery">
-            <img src="images/416838538_6999065640143027_5378911182045016792_n.jpg" alt="Beautiful Memory 1">
-            <img src="images/437945747_7414880688561518_4350135714436767057_n.jpg" alt="Beautiful Memory 2">
-            <img src="images/444784189_7593854927330759_3901486776261902026_n.jpg" alt="Beautiful Memory 3">
-            <img src="images/352770982_6260345177348414_6717214165418742372_n.jpg" alt="Beautiful Memory 4">
-        </div>
-        <p class="quote">I love you forever and always! ❤️</p>
-        <button class="button" onclick="showSurprise()">Click for a Surprise</button>
+  <audio id="bgMusic" loop>
+    <source src="mp3/Shania-Twain-You-re-Still-The-One-instrumentalfx.mp3" type="audio/mpeg">
+  </audio>
+  <button id="playMusic" class="button" style="margin: 20px;" onclick="document.getElementById('bgMusic').play(); this.style.display='none';">Play Music</button>
+  <div class="container">
+    <h1>Happy Valentine's Day & Happy Birthday, My Love! 💖</h1>
+    <p class="quote">"You are my heart, my soul, my everything."</p>
+    <div class="photo-gallery" id="gallery">
+      <img src="images/416838538_6999065640143027_5378911182045016792_n.jpg" alt="Beautiful Memory 1">
+      <img src="images/437945747_7414880688561518_4350135714436767057_n.jpg" alt="Beautiful Memory 2">
+      <img src="images/444784189_7593854927330759_3901486776261902026_n.jpg" alt="Beautiful Memory 3">
+      <img src="images/352770982_6260345177348414_6717214165418742372_n.jpg" alt="Beautiful Memory 4">
     </div>
-
-    <script>
-        // Trigger background music play on first user interaction
-        document.addEventListener('DOMContentLoaded', function() {
-            const audio = document.getElementById('bgMusic');
-            document.body.addEventListener('click', function() {
-                audio.play();
-            }, { once: true });
-        });
-
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('floating-hearts');
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.body.appendChild(heart);
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
+    <p class="quote">I love you forever and always! ❤️</p>
+    <div class="quote-carousel" id="quoteCarousel"></div>
+    <button class="button" onclick="showSurprise()">Click for a Surprise</button>
+    <div class="love-letter" id="loveLetter">
+      <div class="typed-text" id="typedText"></div>
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <span class="close" id="closeModal">×</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const audio = document.getElementById('bgMusic');
+      document.body.addEventListener('click', function() {
+        if (audio.paused) {
+          audio.play();
+          document.getElementById('playMusic').style.display = 'none';
         }
-        setInterval(createHeart, 800);
-
-        function showSurprise() {
-            const messages = [
-                'You are the most beautiful person in my life! 💖',
-                'Every moment with you is a blessing! 🌹',
-                'I love you more than words can express! ❤️',
-                'Forever yours, my love! 💕'
-            ];
-            alert(messages[Math.floor(Math.random() * messages.length)]);
-        }
-    </script>
+      }, { once: true });
+    });
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('floating-hearts');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => { heart.remove(); }, 5000);
+    }
+    setInterval(createHeart, 800);
+    function showSurprise() {
+      const messages = [
+        'You are the most beautiful person in my life! 💖',
+        'Every moment with you is a blessing! 🌹',
+        'I love you more than words can express! ❤️',
+        'Forever yours, my love! 💕'
+      ];
+      alert(messages[Math.floor(Math.random() * messages.length)]);
+    }
+    const quotes = [
+      'You are my sunshine on a cloudy day! ☀️',
+      'You make my world brighter! ✨',
+      'I am the luckiest to have you! 💕',
+      'My love for you is endless! 💖'
+    ];
+    let quoteIndex = 0;
+    function updateQuote() {
+      const quoteCarousel = document.getElementById('quoteCarousel');
+      quoteCarousel.style.opacity = 0;
+      setTimeout(() => {
+        quoteCarousel.innerText = quotes[quoteIndex];
+        quoteCarousel.style.opacity = 1;
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+      }, 500);
+    }
+    setInterval(updateQuote, 3000);
+    updateQuote();
+    const modal = document.getElementById('myModal');
+    const modalImg = document.getElementById('modalImg');
+    const gallery = document.getElementById('gallery');
+    const closeModal = document.getElementById('closeModal');
+    gallery.addEventListener('click', function(event) {
+      if (event.target.tagName === 'IMG') {
+        modal.style.display = 'block';
+        modalImg.src = event.target.src;
+      }
+    });
+    closeModal.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+    const loveLetterText = "My dearest love, every moment with you is a treasure. Your smile brightens my darkest days, and your love fills my heart with endless joy. I am forever grateful to have you in my life. Forever and always, I cherish you.";
+    let letterIndex = 0;
+    function typeLoveLetter() {
+      const typedText = document.getElementById('typedText');
+      if (letterIndex < loveLetterText.length) {
+        typedText.innerText += loveLetterText.charAt(letterIndex);
+        letterIndex++;
+        setTimeout(typeLoveLetter, 50);
+      } else {
+        typedText.innerText += " ♥";
+      }
+    }
+    typeLoveLetter();
+  </script>
 </body>
 </html>
